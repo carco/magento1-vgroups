@@ -1,0 +1,28 @@
+                <div class='other-colors' style="width:500px;">
+
+                    <ul class="other-wrapp">
+                    <?php
+                    $_groups = $_product->getVgroups();
+                    if(($_groups->getSize() > 1)):
+                    echo "<p class=\"notice2\">".$this->__('Available colors')."</p>";
+                    ?>
+                    <?php
+                        foreach($_groups as $group):
+                    ?>
+                            
+                            <li>
+                <a href="<?php echo $group->getProductUrl();?>">
+         <img src="<?php echo $this->helper('catalog/image')->init($group, 'thumbnail')->resize(58); ?>"/>
+                                    <?php //Zend_Debug::dump($this->helper('amshopby')->init($group)->showLinks())
+//                                    Zend_Debug::dump(Mage::helper('amshopby')->init($group));
+                                    ?>
+                                </a>
+                            </li>
+                        
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
+                    </ul>
+                    <?php //images?>
+                </div>
