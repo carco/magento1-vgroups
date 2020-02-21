@@ -1,0 +1,35 @@
+
+                     <div class="item-options">
+                            <?php if($_product->getTypeId() == "configurable" && ($sizes = $_product->getVsizes())): ?>
+                            <div class="size_attribute">
+                                <?php
+                                        $opts = array();
+                                        foreach($sizes as $i=>$size) {
+                                            $opts[] = '<a href="'.$_product->getProductUrl().'#size'.$i.'">'.$size.'</a>';
+                                        }
+                                        echo implode(', ',$opts);
+                                ?>
+        
+                            </div>
+                            <?php endif; ?>
+                            <ul class="group_images">
+                                <?php //images?>
+                                <?php
+                                $_groups = $_product->getVgroups();
+        
+                                    if(($_groups && $_groups->count() > 1)): //count is ok, need to be loaded
+                                        foreach($_groups as $group):
+                                ?>
+                                            <li>
+                                                <a href="<?php echo $group->getProductUrl();?>">
+                                                    <img src="<?php echo $this->helper('catalog/image')->init($group, 'thumbnail')->resize(35); ?>"/>
+                                                </a>
+                                            </li>
+        
+                                <?php
+                                        endforeach;
+                                    endif;
+                                ?>
+                                <?php //images?>
+                            </ul>
+                     </div>

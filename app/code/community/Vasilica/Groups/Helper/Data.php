@@ -2,9 +2,7 @@
 
 class Vasilica_Groups_Helper_Data extends Mage_Core_Helper_Abstract {
 	protected $_sizes = array(
-		72 => 'marime_eu', //incaltaminte
-		74 => 'marime_haine_int', //haine
-		78 => 'marime_lenjerie' //lenjerie
+        194 => 'accesories_size', 
 	);
 
 	protected $_attributes = null;
@@ -85,11 +83,11 @@ class Vasilica_Groups_Helper_Data extends Mage_Core_Helper_Abstract {
 							}
 						}
 					}
-					$item->setSizes($good_sizes);
+					$item->setVsizes($good_sizes);
 					break; //keep only first
 				}
 			} else {
-				$item->setSizes(array());
+				$item->setVsizes(array());
 			}
 		}
 		return $this;
