@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vasilica_Groups>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Vasilica_Groups>
+    </modules>
+</config>
